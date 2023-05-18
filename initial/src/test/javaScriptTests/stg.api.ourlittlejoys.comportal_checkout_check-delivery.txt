@@ -1,0 +1,23 @@
+pm.test("Verify data object has correct properties and types", function () {
+pm.expect(pm.response.json().status).that.is.a('boolean');
+pm.expect(pm.response.json().isError).that.is.a('boolean');
+pm.expect(pm.response.json().errorCode).that.is.a('number');
+pm.expect(pm.response.json().message).that.is.a('string');
+pm.expect(pm.response.json().data).to.be.an('object');
+pm.expect(pm.response.json().data.value).that.is.a('string');
+pm.expect(pm.response.json().data.response).to.be.an('object');
+pm.expect(pm.response.json().data.response.type).that.is.a('string');
+pm.expect(pm.response.json().data.response.regionData).to.be.an('object');
+pm.expect(pm.response.json().data.response.regionData.city).that.is.a('string');
+pm.expect(pm.response.json().data.response.regionData.country_id).that.is.a('string');
+pm.expect(pm.response.json().data.response.regionData.region_id).that.is.a('number');
+pm.expect(pm.response.json().data.response.regionData.region_code).that.is.a('string');
+pm.expect(pm.response.json().data.response.regionData.state).that.is.a('string');
+pm.expect(pm.response.json().data.response.successMessage).to.be.an('array');
+pm.expect(pm.response.json().data.response.successMessage[0].image).that.is.a('string');
+pm.expect(pm.response.json().data.response.successMessage[0].label).that.is.a('string');
+pm.expect(pm.response.json().data.response.successMessage[0].getDeliveryBy).that.is.a('string');
+pm.expect(pm.response.json().data.response.successMessage[0].date).that.is.a('string');
+pm.expect(pm.response.json().data.response.successMessage[0].estimatedDevliery).that.is.a('string');
+pm.expect(pm.response.json().data.response.deliveryMessage).that.is.a('string');
+});

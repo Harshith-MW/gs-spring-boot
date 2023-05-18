@@ -1,0 +1,26 @@
+pm.test("Verify data object has correct properties and types", function () {
+pm.expect(pm.response.json().status).that.is.a('boolean');
+pm.expect(pm.response.json().isError).that.is.a('boolean');
+pm.expect(pm.response.json().errorCode).that.is.a('number');
+pm.expect(pm.response.json().message).that.is.a('string');
+pm.expect(pm.response.json().data).to.be.an('object');
+pm.expect(pm.response.json().data.id).that.is.a('number');
+pm.expect(pm.response.json().data.selectedAddressId).that.is.a('string');
+pm.expect(pm.response.json().data.address).to.be.an('array');
+pm.expect(pm.response.json().data.address[0].id).that.is.a('string');
+pm.expect(pm.response.json().data.address[0].address).that.is.a('string');
+pm.expect(pm.response.json().data.address[0].city).that.is.a('string');
+pm.expect(pm.response.json().data.address[0].firstName).that.is.a('string');
+pm.expect(pm.response.json().data.address[0].lastName).that.is.a('string');
+pm.expect(pm.response.json().data.address[0].phoneNumber).that.is.a('string');
+pm.expect(pm.response.json().data.address[0].pincode).that.is.a('string');
+pm.expect(pm.response.json().data.address[0].state).that.is.a('string');
+pm.expect(pm.response.json().data.address[0].countryId).that.is.a('string');
+pm.expect(pm.response.json().data.address[0].regionId).that.is.a('number');
+pm.expect(pm.response.json().data.address[0].regionCode).that.is.a('string');
+pm.expect(pm.response.json().data.address[0].name).that.is.a('string');
+pm.expect(pm.response.json().data.address[0].email).that.is.a('string');
+pm.expect(pm.response.json().data.address[0].source).that.is.a('string');
+pm.expect(pm.response.json().data.address[0].idDefault).that.is.a('boolean');
+pm.expect(pm.response.json().data.ifAddressesPoweredByGokwik).that.is.a('boolean');
+});
